@@ -1,8 +1,13 @@
-import React from 'react'
+import { TaskProvider } from './context/TaskContext.jsx'
+import TaskBoard from './components/TaskBoard.jsx'
 
 function App() {
   return (
-    <div>Hello world</div>
+    <TaskProvider>
+      <div className="min-h-screen bg-slate-100">
+        <TaskBoard />
+      </div>
+    </TaskProvider>
   )
 }
 
