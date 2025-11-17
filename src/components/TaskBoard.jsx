@@ -58,7 +58,7 @@ function TaskBoard() {
 
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6">
-      <header className="flex flex-col gap-3 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-600 to-indigo-600 px-6 py-8 text-white shadow-lg">
+      <header className="flex flex-col gap-3 rounded-2xl bg-linear-to-r from-sky-500 via-sky-600 to-indigo-600 px-6 py-8 text-white shadow-lg">
         <p className="text-sm uppercase tracking-wide text-sky-100/90">Kanban Board</p>
         <h1 className="text-3xl font-bold">Stay on top of every task</h1>
         <p className="max-w-2xl text-sm text-sky-100">
@@ -66,7 +66,7 @@ function TaskBoard() {
           forward. Everything stays saved locally, so you can pick up right where you left off.
         </p>
       </header>
-
+      
       <TaskForm statuses={statuses} onSubmit={handleTaskCreate} />
 
       <DragDropContext onDragEnd={handleDragEnd}>

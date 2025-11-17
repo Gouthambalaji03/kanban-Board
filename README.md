@@ -1,16 +1,56 @@
-# React + Vite
+# Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Stay on top of every task with a lightweight drag-and-drop workflow board. This project mirrors the in-app hero copy in `TaskBoard.jsx` by helping you “Stay on top of every task.”
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Columns for `To Do`, `In Progress`, and `Done`
+- Create, edit, and delete tasks with descriptions, priority, and tags
+- Drag-and-drop powered by `@hello-pangea/dnd`
+- Task modal for inline updates
+- Local persistence through `localStorage`
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 + Vite
+- Tailwind CSS 4
+- Context API with hooks
+- `@hello-pangea/dnd` for reordering
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL (default `http://localhost:5173`) to use the board.
+
+### Useful scripts
+
+```bash
+npm run build   # Production build
+npm run preview # Preview the production bundle
+npm run lint    # ESLint checks
+```
+
+## Usage
+
+1. Add a task with the form; pick its starting status and priority.
+2. Drag cards between columns to update progress.
+3. Click a card to open the modal, then edit or delete it.
+4. Data persists per browser via `localStorage`.
+
+## Structure
+
+```
+src/
+  components/   Task board UI, forms, modal, cards
+  context/      Task context + persistence helpers
+  App.jsx       Application shell
+  main.jsx      Vite entry point
+```
+
+## Contribution
+
+Pull requests are welcome. Run `npm run lint` before submitting to keep things consistent.

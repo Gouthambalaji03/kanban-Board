@@ -19,9 +19,13 @@ const TaskCard = forwardRef(function TaskCard(
       {...draggableProps}
       {...dragHandleProps}
       onClick={onClick}
-      style={{ ...draggableStyle, zIndex: isDragging ? 1000 : draggableStyle?.zIndex }}
+      style={{
+        ...draggableStyle,
+        cursor: isDragging ? 'grabbing' : 'grab',
+        zIndex: isDragging ? 1000 : draggableStyle?.zIndex,
+      }}
       className={[
-        'group cursor-pointer rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition',
+        'group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition',
         isDragging ? 'ring-2 ring-sky-400' : 'hover:border-sky-300 hover:shadow-md',
       ].join(' ')}
     >
